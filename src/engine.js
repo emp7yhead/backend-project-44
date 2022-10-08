@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const roundNumber = 3;
+
 export default (gameMode, gameRules) => {
   console.log('Welcome to the Brain Games!');
 
@@ -8,7 +10,7 @@ export default (gameMode, gameRules) => {
   console.log(`Hello, ${name}!`);
   console.log(gameRules);
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundNumber; i += 1) {
     const [correctAnswer, question] = gameMode();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
@@ -16,10 +18,8 @@ export default (gameMode, gameRules) => {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n
-        Let's try again, ${name}!`,
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
