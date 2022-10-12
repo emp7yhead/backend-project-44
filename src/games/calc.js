@@ -1,6 +1,6 @@
 import numGenerator from '../utils.js';
 
-import gameGenerator from '../engine.js'
+import gameGenerator from '../engine.js';
 
 const gameRules = 'What is the result of the expression?';
 

@@ -1,6 +1,6 @@
 import numGenerator from '../utils.js';
 
-import gameGenerator from '../engine.js'
+import gameGenerator from '../engine.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
