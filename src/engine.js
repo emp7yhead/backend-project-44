@@ -23,5 +23,5 @@ export default (gameMode, gameRules) => {
       return;
     }
   }
-  console.log(`Congratulation, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 };
