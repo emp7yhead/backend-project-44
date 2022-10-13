@@ -19,7 +19,7 @@ const generateProgressionGameRound = () => {
   const arrLength = generateNum(5, 10);
   const step = generateNum(2, 20);
   const question = generateArr(arrLength, step);
-  const randomIndex = generateNum(0, question.length);
+  const randomIndex = generateNum(0, question.length - 1);
   const answer = question.splice(randomIndex, 1, '..');
   return [answer.join(), question.join(' ')];
 };
