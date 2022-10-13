@@ -22,4 +22,6 @@ const generatePrimeGameRound = () => {
   return [correctAnswer, question];
 };
 
-export default generateGame(generatePrimeGameRound, gameRules);
+export default () => {
+  generateGame(generatePrimeGameRound, gameRules);
+};

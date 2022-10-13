@@ -30,4 +30,6 @@ const generateCalcGameRound = () => {
   return [String(correctAnswer), question];
 };
 
-export default generateGame(generateCalcGameRound, gameRules);
+export default () => {
+  generateGame(generateCalcGameRound, gameRules);
+};

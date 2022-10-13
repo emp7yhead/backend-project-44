@@ -18,4 +18,6 @@ const generateEvenGameRound = () => {
   return [correctAnswer, question];
 };
 
-export default generateGame(generateEvenGameRound, gameRules);
+export default () => {
+  generateGame(generateEvenGameRound, gameRules);
+};

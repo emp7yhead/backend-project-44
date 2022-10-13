@@ -24,4 +24,6 @@ const generateProgressionGameRound = () => {
   return [answer.join(), question.join(' ')];
 };
 
-export default generateGame(generateProgressionGameRound, gameRules);
+export default () => {
+  generateGame(generateProgressionGameRound, gameRules);
+};

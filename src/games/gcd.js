@@ -19,4 +19,6 @@ const generateGcdGameRound = () => {
   return [String(correctAnswer), question];
 };
 
-export default generateGame(generateGcdGameRound, gameRules);
+export default () => {
+  generateGame(generateGcdGameRound, gameRules);
+};
