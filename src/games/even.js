@@ -1,6 +1,6 @@
-import numGenerator from '../utils.js';
+import generateNum from '../utils.js';
 
-import gameGenerator from '../engine.js';
+import generateGame from '../engine.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,11 +11,11 @@ const isEven = (number) => {
   return 'no';
 };
 
-const evenGame = () => {
-  const number = numGenerator(1, 100);
+const generateEvenGameRound = () => {
+  const number = generateNum(1, 100);
   const question = String(number);
   const correctAnswer = isEven(number);
   return [correctAnswer, question];
 };
 
-export default gameGenerator(evenGame, gameRules);
+export default generateGame(generateEvenGameRound, gameRules);

@@ -1,6 +1,6 @@
-import numGenerator from '../utils.js';
+import generateNum from '../utils.js';
 
-import gameGenerator from '../engine.js';
+import generateGame from '../engine.js';
 
 const gameRules = 'What is the result of the expression?';
 
@@ -21,13 +21,13 @@ const makeAnswer = (firstNum, secondNum, operand) => {
   return firstNum * secondNum;
 };
 
-const calcGame = () => {
-  const firstNumber = numGenerator(1, 100);
-  const secondNumber = numGenerator(1, 100);
+const generateCalcGameRound = () => {
+  const firstNumber = generateNum(1, 100);
+  const secondNumber = generateNum(1, 100);
   const operation = makeChoice(variants);
   const question = `${firstNumber} ${operation} ${secondNumber}`;
   const correctAnswer = makeAnswer(firstNumber, secondNumber, operation);
   return [String(correctAnswer), question];
 };
 
-export default gameGenerator(calcGame, gameRules);
+export default generateGame(generateCalcGameRound, gameRules);

@@ -1,6 +1,6 @@
-import numGenerator from '../utils.js';
+import generateNum from '../utils.js';
 
-import gameGenerator from '../engine.js';
+import generateGame from '../engine.js';
 
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -16,10 +16,10 @@ const isPrime = (number) => {
   return true;
 };
 
-const primeGame = () => {
-  const question = numGenerator(1, 100);
+const generatePrimeGameRound = () => {
+  const question = generateNum(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [correctAnswer, question];
 };
 
-export default gameGenerator(primeGame, gameRules);
+export default generateGame(generatePrimeGameRound, gameRules);
