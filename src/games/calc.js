@@ -4,29 +4,28 @@ import generateGame from '../engine.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const variants = ['+', '-', '*'];
-
-const makeChoice = (operands) => {
-  const index = Math.floor(Math.random() * operands.length);
-  return operands[index];
-};
-
-const makeAnswer = (firstNum, secondNum, operand) => {
-  if (operand === '+') {
-    return firstNum + secondNum;
+const makeAnswer = (firstNum, secondNum, symbol) => {
+  switch (symbol) {
+    case ('+'):
+      return firstNum + secondNum;
+    case ('-'):
+      return firstNum - secondNum;
+    case ('*'):
+      return firstNum * secondNum;
+    default:
+      break;
   }
-  if (operand === '-') {
-    return firstNum - secondNum;
-  }
-  return firstNum * secondNum;
 };
 
 const generateCalcGameRound = () => {
+  const operands = ['+', '-', '*'];
+
   const firstNumber = generateNum(1, 100);
   const secondNumber = generateNum(1, 100);
-  const operation = makeChoice(variants);
-  const question = `${firstNumber} ${operation} ${secondNumber}`;
-  const correctAnswer = makeAnswer(firstNumber, secondNumber, operation);
+
+  const operandIndex = generateNum(0, operands.length - 1);
+  const question = `${firstNumber} ${operands[operandIndex]} ${secondNumber}`;
+  const correctAnswer = makeAnswer(firstNumber, secondNumber, operands[operandIndex]);
   return [String(correctAnswer), question];
 };
 
