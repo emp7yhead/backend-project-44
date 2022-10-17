@@ -13,7 +13,7 @@ const makeAnswer = (firstNum, secondNum, symbol) => {
     case ('*'):
       return firstNum * secondNum;
     default:
-      break;
+      throw new Error('Unsupported symbol');
   }
 };
 
