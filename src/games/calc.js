@@ -19,14 +19,14 @@ const makeAnswer = (firstNum, secondNum, symbol) => {
 };
 
 const generateCalcGameRound = () => {
-  const operands = ['+', '-', '*'];
+  const symbols = ['+', '-', '*'];
 
   const firstNumber = generateNum(1, 100);
   const secondNumber = generateNum(1, 100);
 
-  const operandIndex = generateNum(0, operands.length - 1);
-  const question = `${firstNumber} ${operands[operandIndex]} ${secondNumber}`;
-  const correctAnswer = makeAnswer(firstNumber, secondNumber, operands[operandIndex]);
+  const operandIndex = generateNum(0, symbols.length - 1);
+  const question = `${firstNumber} ${symbols[operandIndex]} ${secondNumber}`;
+  const correctAnswer = makeAnswer(firstNumber, secondNumber, symbols[operandIndex]);
   return [String(correctAnswer), question];
 };
 

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const roundCount = 3;
+const roundsCount = 3;
 
 export default (generateRound, gameRules) => {
   console.log('Welcome to the Brain Games!');
@@ -10,7 +10,7 @@ export default (generateRound, gameRules) => {
   console.log(`Hello, ${name}!`);
   console.log(gameRules);
 
-  for (let i = 0; i < roundCount; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const [correctAnswer, question] = generateRound();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
