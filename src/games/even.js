@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import generateNum from '../utils.js';
 
 import generateGame from '../engine.js';
