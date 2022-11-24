@@ -19,8 +19,8 @@ const generateProgressionGameRound = () => {
   const length = generateNum(5, 10);
   const step = generateNum(2, 20);
   const question = getProgression(length, step);
-  const randomIndex = generateNum(0, question.length - 1);
-  const answer = question.splice(randomIndex, 1, '..');
+  const hiddenItemIndex = generateNum(0, question.length - 1);
+  const answer = question.splice(hiddenItemIndex, 1, '..');
   return [answer.join(), question.join(' ')];
 };
 
